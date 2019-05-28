@@ -2,6 +2,7 @@
 
 import subprocess
 import optparse
+import re
 
 
 def get_arguments():
@@ -30,4 +31,18 @@ def change_mac(interface, new_mac):
 
 
 options = get_arguments()
-change_mac(options.interface, options.new_mac)
+#change_mac(options.interface, options.new_mac)
+
+# check_output() will run the command and return its output
+# can save the output to a variable to print
+ifconfig_result = subprocess.check_output(["ifconfig", options.interface])
+# have to convert bytes object to string
+print(str(ifconfig_result, 'utf-8'))
+
+# using regex to find mac address pattern in ifconfig command output
+mac_address_search_result = re.search(r"(\w{2}:){5}\w{2}", str(ifconfig_result, 'utf-8'))
+# check that the interface we gave can have a mac address
+if mac_address_search_result:
+    print(mac_address_search_result.group(0))
+else:
+    print("[-] Could not read MAC address.")
