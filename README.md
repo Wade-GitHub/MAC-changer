@@ -37,4 +37,4 @@ $python3 mac_changer.py -i eth0 -m 00:11:22:33:44:55
 `[+] MAC address was successfully changed to 00:11:22:33:44:55`
 
 
-So you can copy the original address and save somewhere then use this script again to change it back.
+So, you can copy the original address and save somewhere then use this script again to change it back.
