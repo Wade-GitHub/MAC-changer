@@ -1,7 +1,5 @@
 # MAC-changer
 
----
-
 - This script requires python3.6 or later to run.
 - This script currently only runs on Linux machines.
 - You may need to use `sudo` to change MAC address.
@@ -15,7 +13,7 @@ Sometimes you want to change your MAC address so you can do certain things; for 
 $python3 mac_changer.py -i [interface] -m [address]
 ```
 
-`-i, --interface:` The interface to change MAC address for.
+`-i, --interface:` The interface to change MAC address for.<br>
 `-m, --new_mac:` The new MAC address to change to.
 
 e.g.:
@@ -34,8 +32,8 @@ Just remember that this script will print the original MAC address it finds befo
 $python3 mac_changer.py -i eth0 -m 00:11:22:33:44:55
 ```
 
-`Current MAC = 08:00:27:0d:da:1d`
-`[+] Changing MAC address for eth0 to 00:11:22:33:44:55`
+`Current MAC = 08:00:27:0d:da:1d`<br>
+`[+] Changing MAC address for eth0 to 00:11:22:33:44:55`<br>
 `[+] MAC address was successfully changed to 00:11:22:33:44:55`
 
 
