@@ -1,5 +1,20 @@
 #!/usr/bin/env python3
 
+"""
+mac_changer.py
+Author: Wade
+Email: wwrwade@gmail.com
+Description: A small python script to quickly change MAC address for a given interface.
+
+Usage:
+-i, --interface: The interface to change MAC address for.
+-m, --mac: The MAC address to change to.
+
+e.g.
+$python3 mac_changer.py -i eth0 -m 00:11:22:33:44:55
+$python3 mac_changer.py --interface wlan0 --new_mac 00:11:22:33:44:55
+"""
+
 import subprocess
 import optparse
 import re
