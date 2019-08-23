@@ -16,32 +16,21 @@ Currently only works on Linux machines.
 
 Usage:
 $python3 mac_changer.py [interface] [new_mac]
+"""
 
-e.g.
+EPILOG = """
+Examples:
 $python3 mac_changer.py eth0 00:11:22:33:44:55
 $python3 mac_changer.py wlan0 00:11:22:33:44:55
 """
 
 
-# def get_arguments():
-#     # Create OptionParser object and add options
-#     parser = optparse.OptionParser()
-#     parser.add_option("-i", "--interface", dest="interface", help="Interface to change MAC address")
-#     parser.add_option("-m", "--mac", dest="new_mac", help="New MAC address")
-#     arg_options, arguments = parser.parse_args()
-#     # if user doesn't give interface option, show error
-#     if not arg_options.interface:
-#         parser.error("[-] Please specify an interface, use --help for info.")
-#     # if user doesn't give mac address option, show error
-#     if not arg_options.new_mac:
-#         parser.error("[-] Please specify a new MAC address, use --help for info.")
-#     return arg_options
-
 def get_arguments():
     # Create argparse object and add options
     parser = argparse.ArgumentParser(
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        description=PROGRAM_DESCRIPTION
+        description=PROGRAM_DESCRIPTION,
+        epilog=EPILOG
     )
     # Interface to set new MAC address on
     parser.add_argument(
@@ -90,7 +79,7 @@ if __name__ == "__main__":
 
     # Get current MAC address for interface and print
     current_mac = get_current_mac(args.interface)
-    print(f"Current MAC = {current_mac}")
+    print(f"[+] Current MAC = {current_mac}")
 
     # Change the MAC address for the interface
     change_mac(args.interface, args.new_mac)
