@@ -10,17 +10,17 @@ Sometimes you want to change your MAC address so you can do certain things; for 
 **Usage:**
 
 ```bash
-$python3 mac_changer.py -i [interface] -m [address]
+$python3 mac_changer.py [interface] [address]
 ```
 
-`-i, --interface:` The interface to change MAC address for.<br>
-`-m, --new_mac:` The new MAC address to change to.
+`interface:` The interface to change MAC address for.<br>
+`new_mac:` The new MAC address to change to.
 
 e.g.:
 
 ```bash
-$python3 mac_changer.py -i eth0 -m 00:11:22:33:44:55
-$python3 mac_changer.py --interface wlan0 --new_mac 00:11:44:33:22:55
+$python3 mac_changer.py eth0 00:11:22:33:44:55
+$python3 mac_changer.py wlan0 00:11:44:33:22:55
 ```
 
 ## Caution
@@ -29,10 +29,10 @@ It is highly recommended to use this script in a virtual machine when just playi
 Just remember that this script will print the original MAC address it finds before changing to the new MAC address:
 
 ```bash
-$python3 mac_changer.py -i eth0 -m 00:11:22:33:44:55
+$python3 mac_changer.py eth0 00:11:22:33:44:55
 ```
 
-`Current MAC = 08:00:27:0d:da:1d`<br>
+`[+] Current MAC = 08:00:27:0d:da:1d`<br>
 `[+] Changing MAC address for eth0 to 00:11:22:33:44:55`<br>
 `[+] MAC address was successfully changed to 00:11:22:33:44:55`
 
